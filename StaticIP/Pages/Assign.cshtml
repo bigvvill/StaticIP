@@ -1,0 +1,26 @@
+﻿@page
+@model StaticIP.Pages.AssignModel
+@{
+}
+
+<h4>Assign this IP?</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="IpAddress.Id" />
+            <div class="form-group">
+                <label asp-for="IpAddress.VFourAddress" class="control-label"></label>
+                <input type="text" asp-for="IpAddress.VFourAddress" class="form-control" />
+                <span asp-validation-for="IpAddress.VFourAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Assign" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="AssignIP">Back to List</a>
+</div>

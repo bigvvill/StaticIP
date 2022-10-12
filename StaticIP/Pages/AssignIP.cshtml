@@ -1,0 +1,36 @@
+﻿@page
+@model StaticIP.Pages.AddIPModel
+@{
+}
+<div class="container" style="padding-left:30%">
+<table id="records" class="table table-hover" style="width:50%;">
+    <thead>
+        <tr>
+            <th class="col-md-8" style="text">
+                @Html.DisplayNameFor(model => model.Addresses[0].VFourAddress)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var address in Model.Addresses)
+        {
+            <tr class="list-row">
+                <td>
+                    @Html.DisplayFor(modelItem => address.VFourAddress)
+                </td>
+                
+                <td>
+                    <a button type="button" class="btn btn-secondary" asp-page="./Assign" asp-route-id="@address.Id">
+                        Assign this IP
+                    </a>
+
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>

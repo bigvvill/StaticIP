@@ -1,0 +1,37 @@
+﻿@page
+@model StaticIP.Pages.ReleaseIPModel
+@{
+}
+
+<div class="container" style="padding-left:30%">
+<table id="records" class="table table-hover" style="width:50%;">
+    <thead>
+        <tr>
+            <th class="col-md-8" style="text">
+                @Html.DisplayNameFor(model => model.Addresses[0].VFourAddress)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var address in Model.Addresses)
+        {
+            <tr class="list-row">
+                <td>
+                    @Html.DisplayFor(modelItem => address.VFourAddress)
+                </td>
+
+                <td>
+                    <form method="post">
+                        <a button type="button" class="btn btn-danger" asp-page="./Release" asp-route-id="@address.Id">
+                         Release this IP
+                        </a>
+                    </form>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
